@@ -26,12 +26,13 @@ function Home() {
 
         <div className="relative z-10 text-center px-6 max-w-5xl mx-auto pt-32 pb-20">
           {/* Large centered logo */}
-          <img
-            src={base + 'PROSPER_CREATIVE_LOGO.png'}
-            alt="Prosper Creative Agency"
-            className="h-36 md:h-48 w-auto mx-auto mb-12 drop-shadow-[0_0_20px_rgba(0,174,239,0.4)]"
-            style={{ filter: 'drop-shadow(0 0 2px rgba(255,255,255,0.4))' }}
-          />
+          <div className="inline-block bg-white/95 rounded-3xl px-8 py-4 mb-12 shadow-xl shadow-black/30">
+            <img
+              src={base + 'PROSPER_CREATIVE_LOGO.png'}
+              alt="Prosper Creative Agency"
+              className="h-28 md:h-40 w-auto object-contain"
+            />
+          </div>
 
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight text-white leading-[0.9] mb-8"
             style={{ fontFamily: 'Montserrat, sans-serif' }}>

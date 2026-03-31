@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Globe, Mail, Link2, Phone } from 'lucide-react';
+import { Globe, Mail, Instagram, Phone } from 'lucide-react';
 
 const SOCIAL = [
-    { href: 'https://www.instagram.com/prosper_creativeagency', icon: <Link2 size={15} />, label: 'Instagram' },
+    { href: 'https://www.instagram.com/prosper_creativeagency', icon: <Instagram size={15} />, label: 'Instagram' },
     { href: 'https://prospercreativeagency.com/', icon: <Globe size={15} />, label: 'Website' },
     { href: 'mailto:prospercreativeagency@gmail.com', icon: <Mail size={15} />, label: 'Email' },
     { href: 'tel:+19545495250', icon: <Phone size={15} />, label: 'Phone' },
@@ -17,13 +17,14 @@ export default function Footer() {
 
                     {/* Brand */}
                     <div>
-                        <img
-                            src={import.meta.env.BASE_URL + 'PROSPER_CREATIVE_LOGO.png'}
-                            alt="Prosper Creative Agency"
-                            className="h-20 w-auto object-contain mb-6 drop-shadow-[0_0_8px_rgba(0,174,239,0.2)]"
-                            style={{ filter: 'drop-shadow(0 0 1px rgba(255,255,255,0.25))' }}
-                            onError={(e) => { e.target.onerror = null; e.target.style.display = 'none'; }}
-                        />
+                        <div className="inline-block bg-white/95 rounded-2xl px-5 py-2 mb-6 shadow-lg shadow-black/20">
+                            <img
+                                src={import.meta.env.BASE_URL + 'PROSPER_CREATIVE_LOGO.png'}
+                                alt="Prosper Creative Agency"
+                                className="h-14 w-auto object-contain"
+                                onError={(e) => { e.target.onerror = null; e.target.parentElement.style.display = 'none'; }}
+                            />
+                        </div>
                         <p className="text-gray-500 text-sm leading-relaxed mb-6 max-w-xs">
                             A creative agency specializing in photography, video, podcasts, and multimedia storytelling for events and brands.
                         </p>
@@ -54,7 +55,7 @@ export default function Footer() {
                                 <a href="https://prospercreativeagency.com/" target="_blank" rel="noreferrer" className="hover:text-[#00AEEF] transition-colors">prospercreativeagency.com</a>
                             </li>
                             <li className="flex items-center gap-2">
-                                <Link2 size={14} className="text-[#00AEEF]" />
+                                <Instagram size={14} className="text-[#00AEEF]" />
                                 <a href="https://www.instagram.com/prosper_creativeagency" target="_blank" rel="noreferrer" className="hover:text-[#00AEEF] transition-colors">@prosper_creativeagency</a>
                             </li>
                         </ul>

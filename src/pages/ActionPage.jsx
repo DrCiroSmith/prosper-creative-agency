@@ -122,13 +122,14 @@ export default function ActionPage() {
                                         {/* Brand card */}
                                         <div className="mt-8 pt-8 border-t border-white/5">
                                             <div className="flex items-center gap-3">
-                                                <img
-                                                    src={import.meta.env.BASE_URL + 'PROSPER_CREATIVE_LOGO.png'}
-                                                    alt="Prosper Creative"
-                                                    className="h-10 w-auto object-contain drop-shadow-[0_0_6px_rgba(0,174,239,0.2)]"
-                                                    style={{ filter: 'drop-shadow(0 0 1px rgba(255,255,255,0.25))' }}
-                                                    onError={(e) => { e.target.onerror = null; e.target.style.display = 'none'; }}
-                                                />
+                                                <div className="inline-block bg-white/95 rounded-xl px-3 py-1.5">
+                                                    <img
+                                                        src={import.meta.env.BASE_URL + 'PROSPER_CREATIVE_LOGO.png'}
+                                                        alt="Prosper Creative"
+                                                        className="h-8 w-auto object-contain"
+                                                        onError={(e) => { e.target.onerror = null; e.target.parentElement.style.display = 'none'; }}
+                                                    />
+                                                </div>
                                                 <p className="text-gray-600 text-xs leading-relaxed">
                                                     Prosper Creative Agency<br />Photography · Video · Podcasts · Events
                                                 </p>

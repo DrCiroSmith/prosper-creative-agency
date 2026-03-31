@@ -15,8 +15,8 @@ export default function Header() {
     return (
         <header
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
-                    ? 'bg-[#0a0a0a]/95 backdrop-blur-xl border-b border-white/5 shadow-lg shadow-black/30'
-                    : 'bg-transparent'
+                ? 'bg-[#0a0a0a]/95 backdrop-blur-xl border-b border-white/5 shadow-lg shadow-black/30'
+                : 'bg-transparent'
                 }`}
         >
             {/* Top micro-bar — contact info */}
@@ -34,12 +34,13 @@ export default function Header() {
             <div className="max-w-7xl mx-auto px-6 lg:px-10 h-28 flex items-center justify-between">
                 {/* Logo — LARGE, with brightness filter so dark parts glow on dark bg */}
                 <Link to="/" className="flex items-center group shrink-0">
-                    <img
-                        src={import.meta.env.BASE_URL + 'PROSPER_CREATIVE_LOGO.png'}
-                        alt="Prosper Creative Agency"
-                        className="h-24 w-auto object-contain transition-all duration-300 group-hover:scale-105 drop-shadow-[0_0_12px_rgba(0,174,239,0.3)]"
-                        style={{ filter: 'drop-shadow(0 0 1px rgba(255,255,255,0.3))' }}
-                    />
+                    <div className="bg-white/95 rounded-2xl px-4 py-2 shadow-lg shadow-black/20 transition-all duration-300 group-hover:scale-105 group-hover:shadow-[0_0_20px_rgba(0,174,239,0.2)]">
+                        <img
+                            src={import.meta.env.BASE_URL + 'PROSPER_CREATIVE_LOGO.png'}
+                            alt="Prosper Creative Agency"
+                            className="h-16 w-auto object-contain"
+                        />
+                    </div>
                 </Link>
 
                 {/* Desktop Nav */}
