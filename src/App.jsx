@@ -14,14 +14,14 @@ const SERVICES = [
   { icon: <PartyPopper size={20} />, label: 'Events' },
 ];
 
-function Home() {
+function Home({ heroBg = 'hero_studio.png' }) {
   const base = import.meta.env.BASE_URL;
   return (
     <div className="bg-[#0a0a0a]">
 
       {/* ═══ HERO — full-viewport cinematic ═══ */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <img src={base + 'hero_studio.png'} alt="" className="absolute inset-0 w-full h-full object-cover object-center" />
+        <img src={base + heroBg} alt="" className="absolute inset-0 w-full h-full object-cover object-center" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/60 to-[#0a0a0a]" />
 
         <div className="relative z-10 text-center px-6 max-w-5xl mx-auto pt-32 pb-20">
@@ -164,6 +164,8 @@ function App() {
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/test-1" element={<Home heroBg="hero_test_1.png" />} />
+            <Route path="/test-2" element={<Home heroBg="hero_test_2.png" />} />
             <Route path="/guide" element={<LandingPage />} />
             <Route path="/download" element={<ActionPage />} />
           </Routes>
