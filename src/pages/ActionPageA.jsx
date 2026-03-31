@@ -5,8 +5,19 @@ export default function ActionPageA() {
     const [email, setEmail] = useState('');
     const [isDownloaded, setIsDownloaded] = useState(false);
 
-    const handleDownload = () => {
-        // Optionally we can log the email somewhere, but for now we just show thank you state
+    const handleRegister = (e) => {
+        e.preventDefault();
+        if (!email) return;
+
+        // Trigger programmatic download
+        const link = document.createElement('a');
+        link.href = import.meta.env.BASE_URL + "Prosper Creative The Event Marketing PDF Content.pdf";
+        link.download = "The_Event_Marketing_Success_Framework.pdf";
+        link.target = "_blank";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+
         setIsDownloaded(true);
     };
 
@@ -59,14 +70,15 @@ export default function ActionPageA() {
                                 <h2 className="text-2xl font-bold text-dark">Get Instant Access</h2>
                             </div>
 
-                            <div className="space-y-5">
+                            <form className="space-y-5" onSubmit={handleRegister}>
                                 <div>
                                     <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                                        Email address (optional)
+                                        Email address *
                                     </label>
                                     <input
                                         type="email"
                                         id="email"
+                                        required
                                         className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors outline-none"
                                         placeholder="Enter your email to receive more marketing insights"
                                         value={email}
@@ -75,17 +87,14 @@ export default function ActionPageA() {
                                     <p className="text-xs text-gray-500 mt-2 text-center">We respect your privacy and will never share your information.</p>
                                 </div>
 
-                                <a
-                                    href="/Prosper Creative The Event Marketing PDF Content.pdf"
-                                    download="The_Event_Marketing_Success_Framework.pdf"
-                                    target="_blank"
-                                    onClick={handleDownload}
+                                <button
+                                    type="submit"
                                     className="w-full flex items-center justify-center px-4 py-4 bg-primary-500 text-white font-bold rounded-lg hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 transition-all shadow-md group"
                                 >
                                     <Download className="mr-2 h-5 w-5 animate-bounce" />
-                                    DOWNLOAD NOW
-                                </a>
-                            </div>
+                                    REGISTER & DOWNLOAD NOW
+                                </button>
+                            </form>
                         </>
                     ) : (
                         <div className="text-center py-10 animate-fade-in-up">

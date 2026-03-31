@@ -5,7 +5,18 @@ export default function ActionPageB() {
     const [email, setEmail] = useState('');
     const [isDownloaded, setIsDownloaded] = useState(false);
 
-    const handleDownload = () => {
+    const handleRegister = (e) => {
+        e.preventDefault();
+        if (!email) return;
+
+        const link = document.createElement('a');
+        link.href = import.meta.env.BASE_URL + "Prosper Creative The Event Marketing PDF Content.pdf";
+        link.download = "The_Event_Marketing_Success_Framework.pdf";
+        link.target = "_blank";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+
         setIsDownloaded(true);
     };
 
@@ -59,28 +70,31 @@ export default function ActionPageB() {
                             <h2 className="text-2xl font-bold text-dark mb-2 text-center">Ready to unlock growth?</h2>
                             <p className="text-gray-500 mb-8 text-center text-sm">Download your framework immediately.</p>
 
-                            <div className="space-y-5">
+                            <form className="space-y-5" onSubmit={handleRegister}>
                                 <div>
+                                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1 ml-1">
+                                        Email address *
+                                    </label>
                                     <input
                                         type="email"
+                                        id="email"
+                                        required
                                         className="w-full px-4 py-3.5 bg-gray-50 rounded-lg border border-gray-200 focus:bg-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all outline-none"
-                                        placeholder="Enter your email (optional)"
+                                        placeholder="Enter your best email"
                                         value={email}
                                         onChange={(e) => setEmail(e.target.value)}
                                     />
-                                    <p className="text-xs text-gray-400 mt-2 ml-1">Optional: receive more marketing insights.</p>
+                                    <p className="text-xs text-gray-400 mt-2 ml-1">We'll use this email to send you the PDF directly.</p>
                                 </div>
 
-                                <a
-                                    href="/Prosper Creative The Event Marketing PDF Content.pdf"
-                                    download="The_Event_Marketing_Success_Framework.pdf"
-                                    target="_blank"
-                                    onClick={handleDownload}
+                                <button
+                                    type="submit"
                                     className="w-full flex items-center justify-center px-4 py-4 bg-primary-500 text-white font-bold tracking-wide rounded-lg hover:bg-primary-600 focus:outline-none focus:ring-4 focus:ring-primary-100 transition-all shadow-md group mt-6"
                                 >
-                                    GET YOUR FREE GUIDE
-                                </a>
-                            </div>
+                                    <Download className="mr-2 h-5 w-5 animate-bounce" />
+                                    REGISTER & GET FREE GUIDE
+                                </button>
+                            </form>
                         </div>
                     ) : (
                         <div className="bg-white rounded-2xl border border-gray-100 p-10 text-center shadow-lg shadow-gray-200/40 animate-fade-in-up">
