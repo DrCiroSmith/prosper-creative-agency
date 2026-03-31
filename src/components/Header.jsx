@@ -22,8 +22,8 @@ export default function Header() {
             {/* Top micro-bar — contact info */}
             <div className="hidden md:block border-b border-white/5 bg-black/40">
                 <div className="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-end gap-6 py-1.5">
-                    <a href="tel:+19545495250" className="flex items-center gap-1.5 text-gray-500 hover:text-[#00AEEF] text-xs transition-colors">
-                        <Phone size={10} /> +1 (954) 549-5250
+                    <a href="tel:+19546291020" className="flex items-center gap-1.5 text-gray-500 hover:text-[#00AEEF] text-xs transition-colors">
+                        <Phone size={10} /> +1 954 629 1020
                     </a>
                     <a href="mailto:prospercreativeagency@gmail.com" className="flex items-center gap-1.5 text-gray-500 hover:text-[#00AEEF] text-xs transition-colors">
                         <Mail size={10} /> prospercreativeagency@gmail.com
@@ -54,7 +54,7 @@ export default function Header() {
                             {label}
                         </Link>
                     ))}
-                    <a href="https://prospercreativeagency.com/" target="_blank" rel="noreferrer"
+                    <a href="https://www.instagram.com/prosper_creativeagency" target="_blank" rel="noreferrer"
                         className="text-sm font-semibold uppercase tracking-widest text-gray-400 hover:text-[#00AEEF] transition-colors duration-200">
                         Our Work
                     </a>
@@ -85,11 +85,11 @@ export default function Header() {
                             {label}
                         </Link>
                     ))}
-                    <a href="https://prospercreativeagency.com/" target="_blank" rel="noreferrer"
+                    <a href="https://www.instagram.com/prosper_creativeagency" target="_blank" rel="noreferrer"
                         className="block text-white font-bold uppercase tracking-widest text-sm hover:text-[#00AEEF] transition-colors">
                         Our Work
                     </a>
-                    <a href="tel:+19545495250" className="block text-gray-400 text-sm">📞 +1 (954) 549-5250</a>
+                    <a href="tel:+19546291020" className="block text-gray-400 text-sm">📞 +1 954 629 1020</a>
                     <Link to="/guide" onClick={() => setOpen(false)}
                         className="block text-center px-6 py-3.5 bg-[#00AEEF] text-black font-black text-sm uppercase tracking-widest rounded-full hover:bg-[#33C1F5] transition-all">
                         Free Guide →

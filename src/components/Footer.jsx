@@ -4,9 +4,8 @@ import { Globe, Mail, Instagram, Phone } from 'lucide-react';
 
 const SOCIAL = [
     { href: 'https://www.instagram.com/prosper_creativeagency', icon: <Instagram size={15} />, label: 'Instagram' },
-    { href: 'https://prospercreativeagency.com/', icon: <Globe size={15} />, label: 'Website' },
     { href: 'mailto:prospercreativeagency@gmail.com', icon: <Mail size={15} />, label: 'Email' },
-    { href: 'tel:+19545495250', icon: <Phone size={15} />, label: 'Phone' },
+    { href: 'tel:+19546291020', icon: <Phone size={15} />, label: 'Phone' },
 ];
 
 export default function Footer() {
@@ -44,15 +43,11 @@ export default function Footer() {
                         <ul className="space-y-4 text-gray-500 text-sm">
                             <li className="flex items-center gap-2">
                                 <Phone size={14} className="text-[#00AEEF]" />
-                                <a href="tel:+19545495250" className="hover:text-[#00AEEF] transition-colors">+1 (954) 549-5250</a>
+                                <a href="tel:+19546291020" className="hover:text-[#00AEEF] transition-colors">+1 954 629 1020</a>
                             </li>
                             <li className="flex items-center gap-2">
                                 <Mail size={14} className="text-[#00AEEF]" />
                                 <a href="mailto:prospercreativeagency@gmail.com" className="hover:text-[#00AEEF] transition-colors">prospercreativeagency@gmail.com</a>
-                            </li>
-                            <li className="flex items-center gap-2">
-                                <Globe size={14} className="text-[#00AEEF]" />
-                                <a href="https://prospercreativeagency.com/" target="_blank" rel="noreferrer" className="hover:text-[#00AEEF] transition-colors">prospercreativeagency.com</a>
                             </li>
                             <li className="flex items-center gap-2">
                                 <Instagram size={14} className="text-[#00AEEF]" />

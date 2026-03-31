@@ -44,12 +44,12 @@ function Home({ heroBg = 'hero_studio.png' }) {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-            <Link to="/guide"
+            <Link to="/download"
               className="px-8 py-4 bg-[#00AEEF] text-black font-black text-sm uppercase tracking-widest rounded-full hover:bg-[#33C1F5] transition-all glow-blue group inline-flex items-center gap-2">
               Get the Free Marketing Guide
               <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
             </Link>
-            <a href="https://prospercreativeagency.com/" target="_blank" rel="noreferrer"
+            <a href="https://www.instagram.com/prosper_creativeagency" target="_blank" rel="noreferrer"
               className="px-8 py-4 glass text-white font-bold text-sm uppercase tracking-widest rounded-full hover:border-[#00AEEF]/50 transition-all">
               View Our Work →
             </a>
@@ -103,7 +103,7 @@ function Home({ heroBg = 'hero_studio.png' }) {
               <p className="text-gray-500 leading-relaxed mb-10">
                 Our team combines technical excellence with creative vision to deliver photography, videography, podcasting, and multimedia content that doesn't just look great — it drives real business results.
               </p>
-              <Link to="/guide"
+              <Link to="/download"
                 className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#00AEEF] text-black font-black text-sm uppercase tracking-widest rounded-full hover:bg-[#33C1F5] transition-all glow-blue">
                 Download Our Free Guide →
               </Link>
@@ -141,11 +141,11 @@ function Home({ heroBg = 'hero_studio.png' }) {
             Start with our free Event Marketing Success Framework and discover how to turn every event into a growth engine.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link to="/guide"
+            <Link to="/download"
               className="px-10 py-5 bg-[#00AEEF] text-black font-black uppercase tracking-widest rounded-full hover:bg-[#33C1F5] transition-all glow-blue text-base inline-flex items-center gap-2">
               Get the Free Guide →
             </Link>
-            <a href="tel:+19545495250"
+            <a href="tel:+19546291020"
               className="px-10 py-5 glass text-white font-bold uppercase tracking-widest rounded-full hover:border-[#00AEEF]/50 transition-all text-sm">
               📞 Call Us Now
             </a>

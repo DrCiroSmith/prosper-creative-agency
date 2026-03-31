@@ -63,23 +63,7 @@ export default function LandingPage() {
                             ))}
                         </ul>
 
-                        {/* Social proof */}
-                        <div className="flex items-center gap-4 mb-10">
-                            <div className="flex -space-x-2">
-                                {['JM', 'SA', 'KT', 'RA', 'LM'].map((init, i) => (
-                                    <div key={i}
-                                        className={`w-8 h-8 rounded-full border-2 border-[#0a0a0a] flex items-center justify-center text-[10px] font-bold ${['bg-[#00AEEF] text-black', 'bg-white text-black', 'bg-gray-600 text-white', 'bg-[#0090C9] text-black', 'bg-gray-400 text-black'][i]}`}>
-                                        {init}
-                                    </div>
-                                ))}
-                            </div>
-                            <div>
-                                <div className="flex items-center gap-0.5 text-[#F5C518]">
-                                    {[...Array(5)].map((_, i) => <Star key={i} size={12} fill="currentColor" />)}
-                                </div>
-                                <span className="text-gray-400 text-xs">500+ event marketers trust this framework</span>
-                            </div>
-                        </div>
+
 
                         <Link to="/download"
                             className="inline-flex items-center gap-3 px-8 py-4 bg-[#00AEEF] text-black font-black text-sm uppercase tracking-widest rounded-full hover:bg-[#33C1F5] transition-all glow-blue group">

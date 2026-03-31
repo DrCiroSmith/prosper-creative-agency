@@ -71,7 +71,7 @@ export default function ActionPage() {
                             <Phone size={18} className="text-[#00AEEF] shrink-0" />
                             <div>
                                 <div className="text-white text-sm font-bold">Need help? Call us</div>
-                                <a href="tel:+19545495250" className="text-[#00AEEF] text-sm hover:underline">+1 (954) 549-5250</a>
+                                <a href="tel:+19546291020" className="text-[#00AEEF] text-sm hover:underline">+1 954 629 1020</a>
                             </div>
                         </div>
                     </div>
@@ -158,10 +158,6 @@ export default function ActionPage() {
                                             <a href="https://www.instagram.com/prosper_creativeagency" target="_blank" rel="noreferrer"
                                                 className="flex items-center justify-center gap-2 w-full px-6 py-3 glass text-white font-bold text-sm uppercase tracking-widest rounded-full hover:border-[#00AEEF]/40 transition-all">
                                                 Follow Prosper Creative →
-                                            </a>
-                                            <a href="https://prospercreativeagency.com/" target="_blank" rel="noreferrer"
-                                                className="flex items-center justify-center gap-2 w-full px-6 py-3 text-gray-500 text-sm hover:text-[#00AEEF] transition-colors">
-                                                Visit Our Website →
                                             </a>
                                         </div>
                                     </div>
