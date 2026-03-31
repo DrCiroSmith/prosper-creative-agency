@@ -1,5 +1,5 @@
-import React from 'react';
-import { HashRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { HashRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import { ArrowRight, Camera, Video, Mic2, Clapperboard, PartyPopper } from 'lucide-react';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -156,9 +156,20 @@ function Home({ heroBg = 'hero_studio.png' }) {
   );
 }
 
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="flex flex-col min-h-screen bg-[#0a0a0a]">
         <Header />
         <main className="flex-grow">
