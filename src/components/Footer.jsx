@@ -62,7 +62,7 @@ export default function Footer() {
                         <p className="text-gray-500 text-sm mb-6 leading-relaxed">
                             Download "The Event Marketing Success Framework" — free, instant PDF access.
                         </p>
-                        <Link to="/guide"
+                        <Link to="/download"
                             className="inline-flex items-center gap-2 px-6 py-3 bg-[#00AEEF] text-black font-black text-xs uppercase tracking-widest rounded-full hover:bg-[#33C1F5] transition-all glow-blue">
                             Download Now →
                         </Link>

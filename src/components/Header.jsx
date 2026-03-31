@@ -45,7 +45,7 @@ export default function Header() {
 
                 {/* Desktop Nav */}
                 <nav className="hidden md:flex items-center gap-8">
-                    {[['Home', '/'], ['Guide', '/guide']].map(([label, to]) => (
+                    {[['Home', '/'], ['Guide', '/download']].map(([label, to]) => (
                         <Link
                             key={label}
                             to={to}
@@ -59,7 +59,7 @@ export default function Header() {
                         Our Work
                     </a>
                     <Link
-                        to="/guide"
+                        to="/download"
                         className="ml-4 px-6 py-3 bg-[#00AEEF] text-black font-black text-sm uppercase tracking-widest rounded-full hover:bg-[#33C1F5] transition-all duration-200 glow-blue"
                     >
                         Free Guide →
@@ -79,7 +79,7 @@ export default function Header() {
             {/* Mobile Menu */}
             {open && (
                 <div className="md:hidden glass-dark border-t border-white/5 px-6 py-6 space-y-4">
-                    {[['Home', '/'], ['Guide', '/guide']].map(([label, to]) => (
+                    {[['Home', '/'], ['Guide', '/download']].map(([label, to]) => (
                         <Link key={label} to={to} onClick={() => setOpen(false)}
                             className="block text-white font-bold uppercase tracking-widest text-sm hover:text-[#00AEEF] transition-colors">
                             {label}
@@ -90,7 +90,7 @@ export default function Header() {
                         Our Work
                     </a>
                     <a href="tel:+19546291020" className="block text-gray-400 text-sm">📞 +1 954 629 1020</a>
-                    <Link to="/guide" onClick={() => setOpen(false)}
+                    <Link to="/download" onClick={() => setOpen(false)}
                         className="block text-center px-6 py-3.5 bg-[#00AEEF] text-black font-black text-sm uppercase tracking-widest rounded-full hover:bg-[#33C1F5] transition-all">
                         Free Guide →
                     </Link>
