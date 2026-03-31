@@ -1,38 +1,66 @@
 import React from 'react';
-import { Globe, Mail, Phone, MessageSquare } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Globe, Mail, Link2 } from 'lucide-react';
 
 export default function Footer() {
     return (
-        <footer className="bg-dark text-white py-12 border-t border-gray-800">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
-                <div className="text-center md:text-left">
-                    <h3 className="text-2xl font-bold tracking-tight mb-2">PROSPER</h3>
-                    <p className="text-gray-400 text-sm">Creative Agency</p>
-                    <a href="https://www.prospercreative.com" className="text-primary-500 hover:text-primary-400 text-sm mt-3 inline-block transition-colors font-medium">
-                        www.prospercreative.com
-                    </a>
-                </div>
+        <footer className="bg-black border-t border-white/10">
+            <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
+                <div className="grid md:grid-cols-3 gap-12">
+                    {/* Brand */}
+                    <div>
+                        <img
+                            src={import.meta.env.BASE_URL + "PROSPER_CREATIVE_LOGO.png"}
+                            alt="Prosper Creative"
+                            className="h-10 w-auto object-contain brightness-0 invert mb-6"
+                            onError={(e) => { e.target.onerror = null; e.target.style.display = 'none'; }}
+                        />
+                        <p className="text-gray-500 text-sm leading-relaxed mb-6">
+                            Crafting bold event marketing strategies that turn attendees into lifelong clients.
+                        </p>
+                        <div className="flex gap-3">
+                            {[
+                                { href: 'https://www.instagram.com/prosper_creativeagency', icon: <Link2 size={16} /> },
+                                { href: 'https://www.prospercreative.com', icon: <Globe size={16} /> },
+                                { href: 'mailto:hello@prospercreative.com', icon: <Mail size={16} /> },
+                            ].map(({ href, icon }, i) => (
+                                <a key={i} href={href} target="_blank" rel="noreferrer"
+                                    className="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-gray-500 hover:border-yellow-400 hover:text-yellow-400 transition-all">
+                                    {icon}
+                                </a>
+                            ))}
+                        </div>
+                    </div>
 
-                <div className="flex flex-col items-center md:items-end">
-                    <p className="text-sm text-gray-400 mb-4">Stay connected for more insights:</p>
-                    <div className="flex gap-4">
-                        <a href="#" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-primary-500 hover:text-white transition-all transform hover:-translate-y-1">
-                            <MessageSquare size={18} />
-                        </a>
-                        <a href="#" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-primary-500 hover:text-white transition-all transform hover:-translate-y-1">
-                            <Globe size={18} />
-                        </a>
-                        <a href="#" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-primary-500 hover:text-white transition-all transform hover:-translate-y-1">
-                            <Mail size={18} />
-                        </a>
-                        <a href="#" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-primary-500 hover:text-white transition-all transform hover:-translate-y-1">
-                            <Phone size={18} />
-                        </a>
+                    {/* Navigation */}
+                    <div>
+                        <h4 className="text-white font-bold uppercase tracking-widest text-xs mb-6">Navigation</h4>
+                        <ul className="space-y-3">
+                            {[['Home', '/'], ['Landing A', '/lp-a'], ['Landing B', '/lp-b'], ['Download Guide A', '/action-a'], ['Download Guide B', '/action-b']].map(([label, href]) => (
+                                <li key={label}>
+                                    <Link to={href} className="text-gray-500 text-sm hover:text-yellow-400 transition-colors">{label}</Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    {/* CTA */}
+                    <div>
+                        <h4 className="text-white font-bold uppercase tracking-widest text-xs mb-6">Get the Free Guide</h4>
+                        <p className="text-gray-500 text-sm mb-6">
+                            The Event Marketing Success Framework is free and available for immediate download.
+                        </p>
+                        <Link to="/lp-a"
+                            className="inline-flex items-center px-6 py-3 bg-yellow-400 text-black font-black text-sm uppercase tracking-widest rounded-full hover:bg-yellow-300 transition-all">
+                            Download Now →
+                        </Link>
                     </div>
                 </div>
-            </div>
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-gray-800 text-center text-sm text-gray-500">
-                &copy; {new Date().getFullYear()} Prosper Creative Agency. All rights reserved.
+
+                <div className="mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
+                    <p className="text-gray-600 text-xs">&copy; {new Date().getFullYear()} Prosper Creative Agency. All rights reserved.</p>
+                    <p className="text-gray-700 text-xs">Built with ❤️ for high-impact events.</p>
+                </div>
             </div>
         </footer>
     );

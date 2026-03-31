@@ -9,17 +9,34 @@ import ActionPageB from './pages/ActionPageB';
 
 function Home() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-[60vh] text-center space-y-6 animate-fade-in-up">
-      <h1 className="text-4xl font-bold text-dark">Welcome to Prosper Creative</h1>
-      <p className="text-lg text-gray-600 max-w-lg">
-        Select a landing page variation to view the Event Marketing campaign flow.
+    <div className="min-h-screen bg-[#0a0a0a] flex flex-col items-center justify-center text-center px-6 pt-20">
+      {/* Hero Tag */}
+      <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-yellow-400/30 bg-yellow-400/10 text-yellow-400 text-xs font-bold uppercase tracking-widest mb-8">
+        <span className="relative flex h-2 w-2">
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
+          <span className="relative inline-flex rounded-full h-2 w-2 bg-yellow-400"></span>
+        </span>
+        Free Event Marketing Guide
+      </div>
+
+      <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tight text-white leading-none mb-6">
+        TRANSFORMING<br />
+        <span className="text-yellow-400">IDEAS</span> INTO<br />
+        <span className="text-yellow-400">SUCCESS</span>
+      </h1>
+
+      <p className="text-gray-400 text-lg max-w-xl mb-12 leading-relaxed">
+        EDUCATION | PERFORMANCE | CONSULTANCY
       </p>
-      <div className="flex gap-4 mt-8">
-        <Link to="/lp-a" className="px-6 py-3 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition shadow-lg hover:shadow-xl font-medium">
-          View Landing Page A
+
+      <div className="flex flex-col sm:flex-row gap-4 mb-24">
+        <Link to="/lp-a"
+          className="px-8 py-4 bg-yellow-400 text-black font-black text-sm uppercase tracking-widest rounded-full hover:bg-yellow-300 transition-all shadow-lg shadow-yellow-400/20 hover:shadow-yellow-400/40">
+          Funnel A — Educational →
         </Link>
-        <Link to="/lp-b" className="px-6 py-3 bg-dark text-white rounded-lg hover:bg-gray-800 transition shadow-lg hover:shadow-xl font-medium">
-          View Landing Page B
+        <Link to="/lp-b"
+          className="px-8 py-4 bg-transparent text-white font-black text-sm uppercase tracking-widest rounded-full border border-white/20 hover:border-yellow-400 hover:text-yellow-400 transition-all">
+          Funnel B — Lead Gen →
         </Link>
       </div>
     </div>
@@ -29,7 +46,7 @@ function Home() {
 function App() {
   return (
     <Router>
-      <div className="flex flex-col min-h-screen bg-gray-50 font-sans">
+      <div className="flex flex-col min-h-screen bg-[#0a0a0a]">
         <Header />
         <main className="flex-grow">
           <Routes>
