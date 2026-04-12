@@ -43,18 +43,19 @@ function Home({ heroBg = 'hero_studio.png' }) {
             TRANSFORMING IDEAS <br />
             <span className="text-gradient-blue">INTO SUCCESS</span>
           </h1>
-          <div className="flex items-center justify-center gap-4 mb-8">
+          <div className="flex items-center justify-center gap-4 mb-12">
             <span className="text-gray-400 text-[10px] md:text-xs font-bold uppercase tracking-[0.2em]">EDUCATION</span>
             <span className="text-gray-600">|</span>
             <span className="text-gray-400 text-[10px] md:text-xs font-bold uppercase tracking-[0.2em]">PERFORMANCE</span>
             <span className="text-gray-600">|</span>
             <span className="text-gray-400 text-[10px] md:text-xs font-bold uppercase tracking-[0.2em]">CONSULTANCY</span>
-            <div className="flex flex-col sm:flex-row gap-5 pt-8">
-              <Link to="/ap2" className="flex items-center justify-center gap-3 px-12 py-6 text-lg font-black text-black transition-all bg-white rounded-full hover:bg-gray-200 active:scale-[0.98]">
-                Get Strategic
-                <ArrowRight size={22} className="text-black" />
-              </Link>
-            </div>
+          </div>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
+            <Link to="/ap2" className="flex items-center justify-center gap-3 px-12 py-6 text-lg font-black text-black transition-all bg-white rounded-full hover:bg-gray-200 active:scale-[0.98]">
+              Get Strategic
+              <ArrowRight size={22} className="text-black" />
+            </Link>
           </div>
         </div>
 
