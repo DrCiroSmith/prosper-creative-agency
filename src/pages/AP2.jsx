@@ -41,7 +41,7 @@ export default function AP2() {
                                     <FileText size={48} strokeWidth={1.5} />
                                 </div>
                                 <div>
-                                    <h2 className="text-3xl font-['Montserrat',sans-serif] font-black text-white uppercase tracking-tight mb-2">Services & Pricing 2024</h2>
+                                    <h2 className="text-3xl font-['Montserrat',sans-serif] font-black text-white uppercase tracking-tight mb-2">The Event Marketing Success Framework</h2>
                                     <p className="text-gray-500 font-medium uppercase tracking-widest text-xs">PDF · 3.4 MB · High Fidelity Guide</p>
                                 </div>
                             </div>
