@@ -1,16 +1,31 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone, Mail } from 'lucide-react';
 
 export default function Header() {
     const [scrolled, setScrolled] = useState(false);
     const [open, setOpen] = useState(false);
+    const location = useLocation();
+    const [ctaLink, setCtaLink] = useState('/ap2');
 
     useEffect(() => {
         const onScroll = () => setScrolled(window.scrollY > 40);
         window.addEventListener('scroll', onScroll);
+
+        // Smart CTA logic
+        const saved = localStorage.getItem('activeFunnel');
+        if (location.pathname === '/lp1') {
+            setCtaLink('/ap1');
+            localStorage.setItem('activeFunnel', '/ap1');
+        } else if (location.pathname === '/lp2') {
+            setCtaLink('/ap2');
+            localStorage.setItem('activeFunnel', '/ap2');
+        } else if (saved) {
+            setCtaLink(saved);
+        }
+
         return () => window.removeEventListener('scroll', onScroll);
-    }, []);
+    }, [location]);
 
     return (
         <header
@@ -45,6 +60,24 @@ export default function Header() {
 
                 {/* Desktop Nav */}
                 <nav className="hidden md:flex items-center gap-8">
+                    {/* Funnel Quick Access */}
+                    <div className="flex items-center gap-3 mr-4 py-2 px-3 bg-white/5 rounded-full border border-white/10">
+                        <Link
+                            to="/lp1"
+                            title="Emotional Landing Page"
+                            className="w-8 h-8 rounded-full bg-[#FFDC00] text-black flex items-center justify-center font-black text-[10px] hover:scale-110 active:scale-95 transition-all shadow-lg shadow-[#FFDC00]/20"
+                        >
+                            LP1
+                        </Link>
+                        <Link
+                            to="/lp2"
+                            title="Cognitive Landing Page"
+                            className="w-8 h-8 rounded-full bg-[#FFDC00] text-black flex items-center justify-center font-black text-[10px] hover:scale-110 active:scale-95 transition-all shadow-lg shadow-[#FFDC00]/20"
+                        >
+                            LP2
+                        </Link>
+                    </div>
+
                     {[
                         ['Home', '/'],
                         ['About Us', '/about'],
@@ -63,8 +96,8 @@ export default function Header() {
                         Our Work
                     </a>
                     <Link
-                        to="/download"
-                        className="ml-4 px-6 py-3 bg-[#00AEEF] text-black font-black text-sm uppercase tracking-widest rounded-full hover:bg-[#33C1F5] transition-all duration-200 glow-blue"
+                        to={ctaLink}
+                        className="ml-4 px-6 py-3 bg-[#00AEEF] text-black font-black text-sm uppercase tracking-widest rounded-full hover:bg-[#33C1F5] transition-all duration-200 glow-blue shadow-lg"
                     >
                         Free Guide →
                     </Link>
@@ -98,8 +131,20 @@ export default function Header() {
                         Our Work
                     </a>
                     <a href="tel:+19546291020" className="block text-gray-400 text-sm">📞 +1 954 629 1020</a>
-                    <Link to="/download" onClick={() => setOpen(false)}
-                        className="block text-center px-6 py-3.5 bg-[#00AEEF] text-black font-black text-sm uppercase tracking-widest rounded-full hover:bg-[#33C1F5] transition-all">
+                    {/* Funnel Quick Access — Mobile */}
+                    <div className="flex items-center gap-4 py-4 border-y border-white/5">
+                        <Link to="/lp1" onClick={() => setOpen(false)} className="flex-1 flex items-center justify-center gap-3 py-3 rounded-xl bg-[#FFDC00] text-black font-black uppercase tracking-widest text-[10px]">
+                            <span className="w-6 h-6 rounded-full border border-black/20 flex items-center justify-center bg-white/20">1</span>
+                            Emotional Landing Page
+                        </Link>
+                        <Link to="/lp2" onClick={() => setOpen(false)} className="flex-1 flex items-center justify-center gap-3 py-3 rounded-xl bg-[#FFDC00] text-black font-black uppercase tracking-widest text-[10px]">
+                            <span className="w-6 h-6 rounded-full border border-black/20 flex items-center justify-center bg-white/20">2</span>
+                            Cognitive Landing Page
+                        </Link>
+                    </div>
+
+                    <Link to={ctaLink} onClick={() => setOpen(false)}
+                        className="block text-center px-6 py-3.5 bg-[#00AEEF] text-black font-black text-sm uppercase tracking-widest rounded-full hover:bg-[#33C1F5] transition-all shadow-lg">
                         Free Guide →
                     </Link>
                 </div>

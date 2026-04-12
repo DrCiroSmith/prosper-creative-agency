@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Camera, Video, Mic2, Clapperboard, PartyPopper } from 'lucide-react';
 
@@ -10,6 +10,9 @@ const SERVICES = [
 ];
 
 export default function LP1() {
+    useEffect(() => {
+        localStorage.setItem('activeFunnel', '/ap1');
+    }, []);
     const base = import.meta.env.BASE_URL;
     return (
         <div className="min-h-screen bg-black font-['Inter',sans-serif] selection:bg-[#00AEEF] selection:text-black">
@@ -35,7 +38,7 @@ export default function LP1() {
                     </p>
 
                     <div className="reveal-delayed-3 flex flex-col sm:flex-row items-center justify-center gap-6">
-                        <Link to="/ap2" className="px-8 py-4 bg-[#00AEEF] text-black font-black text-sm uppercase tracking-widest rounded-full hover:bg-[#33C1F5] transition-all glow-blue group inline-flex items-center gap-2">
+                        <Link to="/ap1" className="px-8 py-4 bg-[#00AEEF] text-black font-black text-sm uppercase tracking-widest rounded-full hover:bg-[#33C1F5] transition-all glow-blue group inline-flex items-center gap-2">
                             Download Brochure
                             <ArrowRight size={20} className="transition-transform group-hover:translate-x-1" />
                         </Link>
@@ -118,10 +121,11 @@ export default function LP1() {
                         <p className="text-xl text-gray-400 mb-14 max-w-xl mx-auto font-medium">
                             Join the elite brands that trust us to tell their story with unparalleled creative excellence.
                         </p>
-                        <div className="flex justify-center">
-                            <a href="https://www.instagram.com/prosper_creativeagency" target="_blank" rel="noreferrer" className="btn-trendy !px-12 !py-5">
-                                Elevate Your Brand →
-                            </a>
+                        <div className="flex flex-wrap gap-4 pt-4 justify-center">
+                            <Link to="/ap1" className="btn-trendy py-5 px-10 text-lg uppercase tracking-widest font-black active:scale-[0.98] transition-all flex items-center gap-3">
+                                Start Your Story
+                                <ArrowRight size={20} />
+                            </Link>
                         </div>
                     </div>
                 </div>

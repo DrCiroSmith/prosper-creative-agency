@@ -8,6 +8,7 @@ import ActionPage from './pages/ActionPage';
 import AboutUs from './pages/AboutUs';
 import LP1 from './pages/LP1';
 import LP2 from './pages/LP2';
+import AP1 from './pages/AP1';
 import AP2 from './pages/AP2';
 
 const SERVICES = [
@@ -48,14 +49,12 @@ function Home({ heroBg = 'hero_studio.png' }) {
             <span className="text-gray-400 text-[10px] md:text-xs font-bold uppercase tracking-[0.2em]">PERFORMANCE</span>
             <span className="text-gray-600">|</span>
             <span className="text-gray-400 text-[10px] md:text-xs font-bold uppercase tracking-[0.2em]">CONSULTANCY</span>
-          </div>
-
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-            <Link to="/lp1"
-              className="px-10 py-5 bg-[#00AEEF] text-black font-black text-sm uppercase tracking-widest rounded-full hover:bg-[#33C1F5] transition-all glow-blue group inline-flex items-center gap-3">
-              Learn More
-              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-5 pt-8">
+              <Link to="/ap2" className="btn-trendy bg-white text-black hover:bg-gray-200 py-6 px-12 text-lg justify-center gap-3 active:scale-[0.98] transition-all font-black">
+                Get Strategic
+                <ArrowRight size={22} className="text-black" />
+              </Link>
+            </div>
           </div>
         </div>
 
@@ -108,10 +107,12 @@ function Home({ heroBg = 'hero_studio.png' }) {
               <p className="text-gray-500 leading-relaxed mb-10">
                 Our team combines technical excellence with creative vision to deliver photography, videography, podcasting, and multimedia content that doesn't just look great — it drives real business results.
               </p>
-              <Link to="/download"
-                className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#00AEEF] text-black font-black text-sm uppercase tracking-widest rounded-full hover:bg-[#33C1F5] transition-all glow-blue">
-                Download Our Free Guide →
-              </Link>
+              <div className="flex flex-wrap gap-4 pt-4">
+                <Link to="/ap1" className="btn-trendy py-5 px-10 text-lg uppercase tracking-widest font-black active:scale-[0.98] transition-all flex items-center gap-3">
+                  Start Your Story
+                  <ArrowRight size={20} />
+                </Link>
+              </div>
             </div>
 
             <div className="grid grid-cols-2 gap-4">
@@ -146,7 +147,7 @@ function Home({ heroBg = 'hero_studio.png' }) {
             Start with our free Event Marketing Success Framework and discover how to turn every event into a growth engine.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link to="/download"
+            <Link to="/ap2"
               className="px-10 py-5 bg-[#00AEEF] text-black font-black uppercase tracking-widest rounded-full hover:bg-[#33C1F5] transition-all glow-blue text-base inline-flex items-center gap-2">
               Get the Free Guide →
             </Link>
@@ -183,11 +184,12 @@ function App() {
             <Route path="/test-1" element={<Home heroBg="hero_test_1.png" />} />
             <Route path="/test-2" element={<Home heroBg="hero_test_2.png" />} />
             <Route path="/guide" element={<LandingPage />} />
-            <Route path="/download" element={<ActionPage />} />
             <Route path="/about" element={<AboutUs />} />
             <Route path="/lp1" element={<LP1 />} />
+            <Route path="/ap1" element={<AP1 />} />
             <Route path="/lp2" element={<LP2 />} />
             <Route path="/ap2" element={<AP2 />} />
+            <Route path="/download" element={<AP2 />} />
           </Routes>
         </main>
         <Footer />

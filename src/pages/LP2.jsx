@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Target, Zap, Users, TrendingUp, Trophy, CheckCircle2 } from 'lucide-react';
 
@@ -10,6 +10,9 @@ const SERVICE_DETAILS = [
 ];
 
 export default function LP2() {
+    useEffect(() => {
+        localStorage.setItem('activeFunnel', '/ap2');
+    }, []);
     return (
         <div className="min-h-screen bg-black font-['Inter',sans-serif] selection:bg-[#00AEEF] selection:text-black pt-32">
             {/* ═══ SERVICES HERO ═══ */}
@@ -26,14 +29,14 @@ export default function LP2() {
                     <div className="grid lg:grid-cols-2 gap-20 items-center">
                         <div>
                             <h1 className="reveal-delayed-1 text-6xl md:text-8xl font-['Montserrat',sans-serif] font-black uppercase leading-[0.9] tracking-tighter mb-10">
-                                STRATEGIC<br /><span className="text-[#00AEEF]">RESULTS</span>
+                                STRATEGIC<br /><span className="text-[#00AEEF]">GROWTH</span>
                             </h1>
                             <p className="reveal-delayed-2 text-xl text-gray-400 font-medium leading-relaxed mb-12 max-w-lg">
-                                We go beyond aesthetics. We provide the strategic framework and creative tools you need to maximize ROI and dominate your market.
+                                We go beyond aesthetics. We provide the data-driven framework and creative systems you need to maximize ROI and scale your brand predictably.
                             </p>
                             <div className="reveal-delayed-3 flex flex-wrap gap-6">
-                                <Link to="/ap2" className="px-8 py-4 bg-[#00AEEF] text-black font-black text-sm uppercase tracking-widest rounded-full hover:bg-[#33C1F5] transition-all glow-blue group inline-flex items-center gap-2">
-                                    Download Brochure
+                                <Link to="/ap2" className="px-8 py-4 bg-[#00AEEF] text-black font-black text-sm uppercase tracking-widest rounded-full hover:bg-[#33C1F5] transition-all glow-blue group inline-flex items-center gap-3 active:scale-95">
+                                    Get Strategic Plan
                                     <ArrowRight size={20} className="transition-transform group-hover:translate-x-1" />
                                 </Link>
                             </div>

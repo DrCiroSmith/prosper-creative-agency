@@ -1,6 +1,7 @@
 {
   "name": "prosper-creative-agency",
   "private": true,
+  "homepage": "https://drcirosmith.github.io/prosper-creative-agency/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
