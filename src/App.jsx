@@ -1,11 +1,14 @@
 import React, { useEffect } from 'react';
 import { HashRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
-import { ArrowRight, Camera, Video, Mic2, Clapperboard, PartyPopper } from 'lucide-react';
+import { ArrowRight, Camera, Video, Mic2, Clapperboard, PartyPopper, MessageCircle, Phone } from 'lucide-react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import LandingPage from './pages/LandingPage';
 import ActionPage from './pages/ActionPage';
 import AboutUs from './pages/AboutUs';
+import LP1 from './pages/LP1';
+import LP2 from './pages/LP2';
+import AP2 from './pages/AP2';
 
 const SERVICES = [
   { icon: <Camera size={20} />, label: 'Photography' },
@@ -35,25 +38,24 @@ function Home({ heroBg = 'hero_studio.png' }) {
             />
           </div>
 
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight text-white leading-[0.9] mb-8"
-            style={{ fontFamily: 'Montserrat, sans-serif' }}>
-            WE <span className="text-gradient-blue">CAPTURE</span><br />YOUR STORY
+          <h1 className="text-5xl md:text-8xl font-black uppercase text-white leading-[0.9] mb-10 tracking-tighter" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+            TRANSFORMING IDEAS <br />
+            <span className="text-gradient-blue">INTO SUCCESS</span>
           </h1>
-
-          <p className="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed">
-            Prosper Creative Agency transforms your events and brand moments into powerful visual narratives that convert audiences into clients.
-          </p>
+          <div className="flex items-center justify-center gap-4 mb-8">
+            <span className="text-gray-400 text-[10px] md:text-xs font-bold uppercase tracking-[0.2em]">EDUCATION</span>
+            <span className="text-gray-600">|</span>
+            <span className="text-gray-400 text-[10px] md:text-xs font-bold uppercase tracking-[0.2em]">PERFORMANCE</span>
+            <span className="text-gray-600">|</span>
+            <span className="text-gray-400 text-[10px] md:text-xs font-bold uppercase tracking-[0.2em]">CONSULTANCY</span>
+          </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-            <Link to="/download"
-              className="px-8 py-4 bg-[#00AEEF] text-black font-black text-sm uppercase tracking-widest rounded-full hover:bg-[#33C1F5] transition-all glow-blue group inline-flex items-center gap-2">
-              Get the Free Marketing Guide
-              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            <Link to="/lp1"
+              className="px-10 py-5 bg-[#00AEEF] text-black font-black text-sm uppercase tracking-widest rounded-full hover:bg-[#33C1F5] transition-all glow-blue group inline-flex items-center gap-3">
+              Learn More
+              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </Link>
-            <a href="https://www.instagram.com/prosper_creativeagency" target="_blank" rel="noreferrer"
-              className="px-8 py-4 glass text-white font-bold text-sm uppercase tracking-widest rounded-full hover:border-[#00AEEF]/50 transition-all">
-              View Our Work →
-            </a>
           </div>
         </div>
 
@@ -69,9 +71,11 @@ function Home({ heroBg = 'hero_studio.png' }) {
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <span className="text-[#00AEEF] text-xs font-bold uppercase tracking-widest block mb-4">What We Do</span>
-            <h2 className="text-4xl md:text-5xl font-black uppercase text-white" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-              OUR <span className="text-gradient-blue">SERVICES</span>
-            </h2>
+            <Link to="/lp2" className="group">
+              <h2 className="text-4xl md:text-5xl font-black uppercase text-white group-hover:text-[#00AEEF] transition-colors" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                OUR <span className="text-gradient-blue group-hover:text-[#33C1F5]">SERVICES</span>
+              </h2>
+            </Link>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
             {SERVICES.map(({ icon, label }) => (
@@ -181,9 +185,27 @@ function App() {
             <Route path="/guide" element={<LandingPage />} />
             <Route path="/download" element={<ActionPage />} />
             <Route path="/about" element={<AboutUs />} />
+            <Route path="/lp1" element={<LP1 />} />
+            <Route path="/lp2" element={<LP2 />} />
+            <Route path="/ap2" element={<AP2 />} />
           </Routes>
         </main>
         <Footer />
+
+        {/* Floating Contact Elements */}
+        <div className="fixed bottom-8 right-8 z-[100] flex flex-col items-end gap-4">
+          <Link to="https://wa.me/19546291020" target="_blank"
+            className="w-16 h-16 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(37,211,102,0.4)] hover:scale-110 transition-transform active:scale-95 group relative">
+            <MessageCircle size={32} />
+            <span className="absolute right-full mr-4 bg-white text-black text-[10px] font-black uppercase tracking-widest px-4 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+              Chat With Us
+            </span>
+          </Link>
+          <Link to="/about"
+            className="px-6 py-3 glass bg-white/10 text-white rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-white/20 transition-all border border-white/10 backdrop-blur-md">
+            Contact Us
+          </Link>
+        </div>
       </div>
     </Router>
   );
