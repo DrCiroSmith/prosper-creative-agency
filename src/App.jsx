@@ -50,7 +50,7 @@ function Home({ heroBg = 'hero_studio.png' }) {
             <span className="text-gray-600">|</span>
             <span className="text-gray-400 text-[10px] md:text-xs font-bold uppercase tracking-[0.2em]">CONSULTANCY</span>
             <div className="flex flex-col sm:flex-row gap-5 pt-8">
-              <Link to="/ap2" className="btn-trendy bg-white text-black hover:bg-gray-200 py-6 px-12 text-lg justify-center gap-3 active:scale-[0.98] transition-all font-black">
+              <Link to="/ap2" className="flex items-center justify-center gap-3 px-12 py-6 text-lg font-black text-black transition-all bg-white rounded-full hover:bg-gray-200 active:scale-[0.98]">
                 Get Strategic
                 <ArrowRight size={22} className="text-black" />
               </Link>
