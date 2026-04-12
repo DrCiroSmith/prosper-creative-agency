@@ -45,7 +45,11 @@ export default function Header() {
 
                 {/* Desktop Nav */}
                 <nav className="hidden md:flex items-center gap-8">
-                    {[['Home', '/'], ['Guide', '/download']].map(([label, to]) => (
+                    {[
+                        ['Home', '/'],
+                        ['About Us', '/about'],
+                        ['Guide', '/download']
+                    ].map(([label, to]) => (
                         <Link
                             key={label}
                             to={to}
@@ -79,7 +83,11 @@ export default function Header() {
             {/* Mobile Menu */}
             {open && (
                 <div className="md:hidden glass-dark border-t border-white/5 px-6 py-6 space-y-4">
-                    {[['Home', '/'], ['Guide', '/download']].map(([label, to]) => (
+                    {[
+                        ['Home', '/'],
+                        ['About Us', '/about'],
+                        ['Guide', '/download']
+                    ].map(([label, to]) => (
                         <Link key={label} to={to} onClick={() => setOpen(false)}
                             className="block text-white font-bold uppercase tracking-widest text-sm hover:text-[#00AEEF] transition-colors">
                             {label}

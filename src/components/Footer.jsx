@@ -12,7 +12,7 @@ export default function Footer() {
     return (
         <footer className="bg-[#060606] border-t border-white/5">
             <div className="max-w-7xl mx-auto px-6 lg:px-10 py-20">
-                <div className="grid md:grid-cols-3 gap-12 mb-16">
+                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
 
                     {/* Brand */}
                     <div>
@@ -37,10 +37,21 @@ export default function Footer() {
                         </div>
                     </div>
 
+                    {/* Navigation */}
+                    <div>
+                        <h4 className="text-white font-bold uppercase tracking-widest text-xs mb-6">Navigation</h4>
+                        <ul className="space-y-4 text-gray-500 text-sm font-medium">
+                            <li><Link to="/" className="hover:text-[#00AEEF] transition-colors">Home</Link></li>
+                            <li><Link to="/about" className="hover:text-[#00AEEF] transition-colors">About Us</Link></li>
+                            <li><Link to="/guide" className="hover:text-[#00AEEF] transition-colors">Free Guide</Link></li>
+                            <li><a href="https://www.instagram.com/prosper_creativeagency" target="_blank" rel="noreferrer" className="hover:text-[#00AEEF] transition-colors">Our Work</a></li>
+                        </ul>
+                    </div>
+
                     {/* Contact */}
                     <div>
                         <h4 className="text-white font-bold uppercase tracking-widest text-xs mb-6">Contact</h4>
-                        <ul className="space-y-4 text-gray-500 text-sm">
+                        <ul className="space-y-4 text-gray-500 text-sm font-medium">
                             <li className="flex items-center gap-2">
                                 <Phone size={14} className="text-[#00AEEF]" />
                                 <a href="tel:+19546291020" className="hover:text-[#00AEEF] transition-colors">+1 954 629 1020</a>
@@ -68,6 +79,7 @@ export default function Footer() {
                         </Link>
                     </div>
                 </div>
+
 
                 <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
                     <p className="text-gray-600 text-xs">&copy; {new Date().getFullYear()} Prosper Creative Agency. All rights reserved.</p>

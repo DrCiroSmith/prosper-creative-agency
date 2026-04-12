@@ -5,6 +5,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import LandingPage from './pages/LandingPage';
 import ActionPage from './pages/ActionPage';
+import AboutUs from './pages/AboutUs';
 
 const SERVICES = [
   { icon: <Camera size={20} />, label: 'Photography' },
@@ -179,6 +180,7 @@ function App() {
             <Route path="/test-2" element={<Home heroBg="hero_test_2.png" />} />
             <Route path="/guide" element={<LandingPage />} />
             <Route path="/download" element={<ActionPage />} />
+            <Route path="/about" element={<AboutUs />} />
           </Routes>
         </main>
         <Footer />
