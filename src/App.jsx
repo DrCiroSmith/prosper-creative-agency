@@ -58,7 +58,7 @@ function Home({ heroBg = 'hero_studio.png' }) {
 
             <div className="relative aspect-video rounded-[32px] overflow-hidden border border-white/10 glass-card shadow-2xl group-hover:border-[#00AEEF]/50 transition-colors duration-500">
               <iframe
-                src="https://www.youtube.com/embed/kkA0ZJfmzyk?rel=0&showinfo=0&autoplay=0"
+                src="https://www.youtube.com/embed/CIpfnS4Ebi4?rel=0&showinfo=0&autoplay=0"
                 title="Prosper Creative Video"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
