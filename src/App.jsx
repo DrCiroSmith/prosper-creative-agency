@@ -201,10 +201,16 @@ function App() {
               Chat With Us
             </span>
           </Link>
-          <Link to="/about"
-            className="px-6 py-3 glass bg-white/10 text-white rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-white/20 transition-all border border-white/10 backdrop-blur-md">
-            Contact Us
-          </Link>
+          <div className="flex items-center gap-3">
+            <Link to="/ap2"
+              className="px-6 py-3 bg-[#00AEEF] text-black rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-[#33C1F5] transition-all shadow-lg glow-blue">
+              Download Brochure
+            </Link>
+            <Link to="/about"
+              className="px-6 py-3 glass bg-white/10 text-white rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-white/20 transition-all border border-white/10 backdrop-blur-md">
+              Contact Us
+            </Link>
+          </div>
         </div>
       </div>
     </Router>

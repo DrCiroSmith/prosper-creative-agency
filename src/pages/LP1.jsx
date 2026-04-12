@@ -40,7 +40,7 @@ export default function LP1() {
                             <ArrowRight size={20} className="transition-transform group-hover:translate-x-1" />
                         </Link>
                         <Link to="/lp2" className="px-8 py-4 glass text-white font-bold text-sm uppercase tracking-widest rounded-full hover:border-[#00AEEF]/50 transition-all">
-                            Our Services
+                            Strategic Services
                         </Link>
                     </div>
                 </div>

@@ -137,12 +137,12 @@ export default function AboutUs() {
                         Ready to transform your vision into an iconic visual story? Whether you have a specific project or just a seed of an idea, we're here to grow it.
                     </p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                        <Link to="/download" className="px-10 py-5 bg-[#00AEEF] text-black font-black uppercase tracking-widest rounded-full hover:bg-[#33C1F5] transition-all glow-blue flex items-center gap-2">
-                            Contact Us <ArrowRight size={18} />
+                        <Link to="/ap2" className="px-10 py-5 bg-[#00AEEF] text-black font-black uppercase tracking-widest rounded-full hover:bg-[#33C1F5] transition-all glow-blue flex items-center gap-2">
+                            Download Brochure <ArrowRight size={18} />
                         </Link>
                         <a href="https://www.instagram.com/prosper_creativeagency" target="_blank" rel="noreferrer"
                             className="px-10 py-5 glass text-white font-bold uppercase tracking-widest rounded-full hover:border-[#00AEEF]/50 transition-all text-sm">
-                            Instagram Portfolio
+                            Learn More
                         </a>
                     </div>
                 </div>

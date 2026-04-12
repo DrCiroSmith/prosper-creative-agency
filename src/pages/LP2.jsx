@@ -26,10 +26,10 @@ export default function LP2() {
                     <div className="grid lg:grid-cols-2 gap-20 items-center">
                         <div>
                             <h1 className="reveal-delayed-1 text-6xl md:text-8xl font-['Montserrat',sans-serif] font-black uppercase leading-[0.9] tracking-tighter mb-10">
-                                SERVICES THAT<br /><span className="text-[#00AEEF]">BUILD BRANDS</span>
+                                STRATEGIC<br /><span className="text-[#00AEEF]">RESULTS</span>
                             </h1>
                             <p className="reveal-delayed-2 text-xl text-gray-400 font-medium leading-relaxed mb-12 max-w-lg">
-                                We provide the creative tools and strategic framework you need to dominate your market through high-fidelity visual storytelling.
+                                We go beyond aesthetics. We provide the strategic framework and creative tools you need to maximize ROI and dominate your market.
                             </p>
                             <div className="reveal-delayed-3 flex flex-wrap gap-6">
                                 <Link to="/ap2" className="px-8 py-4 bg-[#00AEEF] text-black font-black text-sm uppercase tracking-widest rounded-full hover:bg-[#33C1F5] transition-all glow-blue group inline-flex items-center gap-2">
