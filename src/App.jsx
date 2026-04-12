@@ -51,6 +51,23 @@ function Home({ heroBg = 'hero_studio.png' }) {
             <span className="text-gray-400 text-[10px] md:text-xs font-bold uppercase tracking-[0.2em]">CONSULTANCY</span>
           </div>
 
+          {/* ═══ VIDEO SHOWREEL ═══ */}
+          <div className="relative w-full max-w-2xl mx-auto mb-16 group">
+            {/* Animated Glow Aura */}
+            <div className="absolute -inset-3 bg-gradient-to-r from-[#00AEEF] to-[#0070a8] rounded-[40px] blur-2xl opacity-20 group-hover:opacity-40 transition-opacity duration-500 animate-[pulse_4s_infinite]"></div>
+
+            <div className="relative aspect-video rounded-[32px] overflow-hidden border border-white/10 glass-card shadow-2xl group-hover:border-[#00AEEF]/50 transition-colors duration-500">
+              <iframe
+                src="https://www.youtube.com/embed/kkA0ZJfmzyk?rel=0&showinfo=0&autoplay=0"
+                title="Prosper Creative Video"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="absolute inset-0 w-full h-full"
+              ></iframe>
+            </div>
+          </div>
+
           <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
             <Link to="/ap2" className="flex items-center justify-center gap-3 px-12 py-6 text-lg font-black text-black transition-all bg-white rounded-full hover:bg-gray-200 active:scale-[0.98]">
               Get Strategic
